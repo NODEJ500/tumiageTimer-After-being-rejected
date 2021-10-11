@@ -20,11 +20,12 @@ class ViewController: UIViewController {
     @IBAction func startButtonAction(_ sender: Any) {
         
         if timermove == false {
-        timer.invalidate()
-        self.startTime = Date.timeIntervalSinceReferenceDate
-        self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-        timermove = true
-        showAnimation()
+            timer.invalidate()
+            self.startTime = Date.timeIntervalSinceReferenceDate
+            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+            timermove = true
+            showAnimation()
+        
         }
     }
     @objc func timerCounter() {
@@ -41,26 +42,26 @@ class ViewController: UIViewController {
         if timermove == true {
             timer.invalidate()
             timermove = false
-
+            
+            
         }
-       
+    
     }
     
     @IBAction func resetButtonAction(_ sender: Any){
         
         if timermove == false {
-        self.startTime = nil
-        self.timerLabel.text = "00:00:00"
+            self.startTime = nil
+            self.timerLabel.text = "00:00:00"
        }
     }
     
     func showAnimation() {
         
         let animationView = AnimationView(name: "Animation")
-        animationView.frame = CGRect(x: 50, y: 50, width: view.bounds.width, height: view.bounds.height)
+        animationView.layer.position = CGPoint(x: 0, y: 0)
         animationView.center = self.view.center
         animationView.loopMode = .loop
-        animationView.contentMode = .scaleAspectFit
         animationView.animationSpeed = 2.5
         view.addSubview(animationView)
         animationView.play()

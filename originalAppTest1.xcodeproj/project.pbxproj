@@ -28,6 +28,7 @@
 		BF64554B2711D1D40029C61E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF64554E2711D1D40029C61E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF6455502711D1D40029C61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7BAA5727130A6B00AA08EA /* オリジナルアプリ.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "オリジナルアプリ.key"; sourceTree = "<group>"; };
 		D38070F747DF0CB49B3C32F0 /* Pods-originalAppTest1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalAppTest1.release.xcconfig"; path = "Target Support Files/Pods-originalAppTest1/Pods-originalAppTest1.release.xcconfig"; sourceTree = "<group>"; };
 		F7E7C6ABD2E9D8BE72566121 /* Pods-originalAppTest1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalAppTest1.debug.xcconfig"; path = "Target Support Files/Pods-originalAppTest1/Pods-originalAppTest1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +57,7 @@
 		BF6455362711D1D30029C61E = {
 			isa = PBXGroup;
 			children = (
+				BF7BAA5627130A3A00AA08EA /* Document */,
 				BF6455412711D1D30029C61E /* originalAppTest1 */,
 				BF6455402711D1D30029C61E /* Products */,
 				44FA1C68794C7B86CEB7F4F5 /* Pods */,
@@ -84,6 +86,14 @@
 				BF6455502711D1D40029C61E /* Info.plist */,
 			);
 			path = originalAppTest1;
+			sourceTree = "<group>";
+		};
+		BF7BAA5627130A3A00AA08EA /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				BF7BAA5727130A6B00AA08EA /* オリジナルアプリ.key */,
+			);
+			path = Document;
 			sourceTree = "<group>";
 		};
 		C9BE6F6C61C82846148255F3 /* Frameworks */ = {
