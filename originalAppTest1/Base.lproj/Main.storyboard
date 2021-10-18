@@ -54,8 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startButtonVar" destination="lXp-ui-bNd" id="TEq-J2-THW"/>
-                        <outlet property="timerLabel" destination="46C-8B-ok3" id="Egt-FD-KzB"/>
+                        <outlet property="timerLabel" destination="46C-8B-ok3" id="nNz-Xq-Mab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

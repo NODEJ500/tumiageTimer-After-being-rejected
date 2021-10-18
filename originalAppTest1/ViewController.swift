@@ -7,56 +7,46 @@ import Lottie
 
 class ViewController: UIViewController {
     
-    var startTime: TimeInterval? = nil
-    var timer = Timer()
-    var timermove = false
-    var suspend = false
+    var timer:Timer!
+    var time:Int = 0
     
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startButtonVar: UIButton!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        let buttonTitle = startButtonVar.currentTitle
-       
     }
     
     @IBAction func startButtonAction(_ sender: UIButton!) {
-        
-        // let buttonTitle = self.startButtonVar.currentTitle
-        
-        if  timermove == false {
-            self.startTime = Date.timeIntervalSinceReferenceDate
-            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-            timermove = true
+            
+        if  timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
             sender.setTitle("ストップ", for: .normal)
+        }else{
+            timer.invalidate()
+            timer = nil
+            sender.setTitle("スタート", for: .normal)
         }
-        
-        self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-
     }
+    
     @objc func timerCounter() {
-        guard let startTime = self.startTime else { return }
-        let time = Date.timeIntervalSinceReferenceDate - startTime
-        let min = Int(time / 60)
+        time += 1
+        let hour = Int(time / 3600)
+        let min = Int(time - (hour * 3600)) / 60
         let sec = Int(time) % 60
-        let msec = Int((time - Double(sec)) * 100.0)
-        self.timerLabel.text = String(format: "%02d:%02d:%02d", min, sec, msec)
+        self.timerLabel.text = String(format: "%02d:%02d", hour, min, sec)
     }
     
     @IBAction func resetButtonAction(_ sender: Any){
         
-        if timermove == false {
-            self.startTime = nil
+        if timer != nil{
             timer.invalidate()
-            self.timerLabel.text = "00:00:00"
-       }
-    }
-    
+            timer = nil
+        }
+        self.timerLabel.text = "00:00:00"
+        time = 0
+   }
+    //アニメーション
     func showAnimation() {
-        
         let animationView = AnimationView(name: "Animation")
         animationView.center = self.view.center
         animationView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
