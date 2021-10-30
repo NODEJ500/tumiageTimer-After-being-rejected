@@ -3,10 +3,11 @@
 
 
 import UIKit
-import Lottie
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,backgroundTimerDelegate {
+   
     
+    var timerIsBackground = false
     var timer:Timer!
     var time:Int = 0
     
@@ -14,19 +15,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-    
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let sceneDelegate = windowScene.delegate as? SceneDelegate else {
+                   return
+        }
+        sceneDelegate.delegate = self
     }
     @IBAction func startButtonAction(_ sender: UIButton!) {
         //タイマーボタンが押された時、ボタンタイトルをストップにする
         if  timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
             sender.setTitle("ストップ", for: .normal)
-            showAnimation()
         }else{
             timer.invalidate()
             timer = nil
             sender.setTitle("スタート", for: .normal)
-            stopAnimation()
         }
     }
     @objc func timerCounter() {
@@ -46,36 +50,51 @@ class ViewController: UIViewController {
         time = 0
    }
     @IBAction func twitterShareButton(_ sender: Any) {
-        //Twitter投稿画面を開く
-        if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
-            // Twitter公式アプリがインストールされている場合
-            let countmin = time / 60
-            let text = "今日の積み上げ\n\(countmin)分\n\n\n\n\n\n#今日の積み上げ"
-            let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            if let encodedText = encodedText,let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        
+        //タイマーが起動しているかつカウントが60秒以上の場合
+        if timer == nil && time >= 60 {
+            
+            //Twitter投稿画面を開く
+            if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
+                // Twitter公式アプリがインストールされている場合
+                let countmin = time / 60
+                let text = "今日の積み上げ\n\(countmin)分\n\n\n\n\n\n#今日の積み上げ"
+                let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                    if let encodedText = encodedText,let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        timerIsBackground = false
+                    }
+            } else {
+                // Twitter公式アプリがインストールされていない場合
+                let url = NSURL(string: "https://twitter.com/")
+                if UIApplication.shared.canOpenURL(url! as URL) {
+                    UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+                }
             }
         } else {
-            // Twitter公式アプリがインストールされていない場合
-            let url = NSURL(string: "https://twitter.com/")
-            if UIApplication.shared.canOpenURL(url! as URL) {
-                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
-            }
+            print("タイマー起動中か、積み上げ時間が短すぎるのでTwitterに移行できません!")
         }
     }
-    //アニメーション
-    func showAnimation() {
-        let animationView = AnimationView(name: "Animation")
-        animationView.center = self.view.center
-        animationView.frame = CGRect(x: 0, y: -150, width: view.frame.size.width / 2, height: view.frame.size.height / 2)
-        animationView.loopMode = .loop
-        animationView.animationSpeed = 2.5
-        view.addSubview(animationView)
-        animationView.play()
+    
+    func setCurrentTimer(_ elapsedTime: Int) {
+        time += elapsedTime
+        let hour = Int(time / 3600)
+        let min = Int(time - (hour * 3600)) / 60
+        let sec = Int(time) % 60
+        self.timerLabel.text = String(format: "%02d:%02d:%02d", hour, min, sec)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
     }
-    func stopAnimation() {
-        let animationView = AnimationView(name: "Animation")
-        animationView.stop()
-        view.addSubview(animationView)
+    
+    func checkBackground() {
+        //バックグラウンドへの移行を確認
+        if let _ = timer {
+        timerIsBackground = true
+        }
     }
+    
+    func deleteTimer() {
+        if let _ = timer {
+           timer.invalidate()
+       }
+  }
 }

@@ -7,11 +7,26 @@
 
 import UIKit
 
+protocol backgroundTimerDelegate: AnyObject {
+    
+    //バックグラウンドの経過時間を渡す
+    func setCurrentTimer(_ elapsedTime:Int)
+    //バックグラウンド時にタイマーを破棄
+    func deleteTimer()
+    //バックグラウンドへの移行を検知
+    func checkBackground()
+    //バックグラウンド中かどうかを示す
+    var timerIsBackground:Bool { set get }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    weak var delegate: backgroundTimerDelegate?
+   
     var window: UIWindow?
-
-
+    
+    let ud = UserDefaults.standard
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -29,11 +44,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        
+        if  delegate?.timerIsBackground == true {
+        let calender = Calendar(identifier: .gregorian)
+        let date1 = ud.value(forKey: "date1") as! Date
+        let date2 = Date()
+        let elapsedTime = calender.dateComponents([.second], from: date1, to: date2).second!
+        print(elapsedTime)
+        delegate?.setCurrentTimer(elapsedTime)
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        
+       ud.set(Date(), forKey: "date1")
+       //タイマー起動中からのバックグラウンドへの移行を検知
+       delegate?.checkBackground()
+       //タイマーを破棄
+       delegate?.deleteTimer()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -46,7 +76,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
