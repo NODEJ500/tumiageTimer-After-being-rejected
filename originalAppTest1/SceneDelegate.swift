@@ -46,12 +46,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         
         if  delegate?.timerIsBackground == true {
-        let calender = Calendar(identifier: .gregorian)
-        let date1 = ud.value(forKey: "date1") as! Date
-        let date2 = Date()
-        let elapsedTime = calender.dateComponents([.second], from: date1, to: date2).second!
-        print(elapsedTime)
-        delegate?.setCurrentTimer(elapsedTime)
+            let calender = Calendar(identifier: .gregorian)
+            let date1 = ud.value(forKey: "date1") as! Date
+            let date2 = Date()
+            let elapsedTime = calender.dateComponents([.second], from: date1, to: date2).second!
+            print(elapsedTime)
+            delegate?.setCurrentTimer(elapsedTime)
         }
     }
 
