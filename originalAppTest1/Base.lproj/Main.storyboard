@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TanukiMagic.ttf">
+            <string>Tanuki-Permanent-Marker</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -22,22 +27,26 @@
                                     <constraint firstAttribute="width" constant="200" id="4h3-RE-dea"/>
                                     <constraint firstAttribute="height" constant="50" id="elo-iE-E47"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCJ-I5-bja">
-                                <rect key="frame" x="259" y="527" width="82" height="31"/>
+                                <rect key="frame" x="214.33333333333334" y="527" width="126.66666666666666" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="リセット"/>
+                                <buttonConfiguration key="configuration" style="plain" title="リセット">
+                                    <fontDescription key="titleFontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="resetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="icD-yI-RMp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXp-ui-bNd">
-                                <rect key="frame" x="50" y="527" width="82" height="31"/>
+                                <rect key="frame" x="50" y="527" width="139" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="スタート"/>
+                                <buttonConfiguration key="configuration" style="plain" title="スタート">
+                                    <fontDescription key="titleFontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1WN-CI-DcN"/>
                                 </connections>
@@ -48,7 +57,9 @@
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Twitterで共有する！"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Twitterで共有する！">
+                                    <fontDescription key="titleFontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="15"/>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>

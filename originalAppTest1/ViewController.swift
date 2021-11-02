@@ -10,6 +10,7 @@ class ViewController: UIViewController,backgroundTimerDelegate {
     var timerIsBackground = false
     var timer:Timer!
     var time:Int = 0
+    let font = UIFont(name: "TanukiMagic", size: 30.0)
     
     
     @IBOutlet weak var startButtonLabel: UIButton!
@@ -17,7 +18,7 @@ class ViewController: UIViewController,backgroundTimerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+    
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                    let sceneDelegate = windowScene.delegate as? SceneDelegate else {
                    return
@@ -29,7 +30,7 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         if  timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
             sender.setTitle("ストップ", for: .normal)
-        }else{
+        } else {
             timer.invalidate()
             timer = nil
             sender.setTitle("スタート", for: .normal)
@@ -50,12 +51,13 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         }
         self.timerLabel.text = "00:00:00"
         startButtonLabel.setTitle("スタート", for: .normal)
+        startButtonLabel.font = font!
         time = 0
    }
     @IBAction func twitterShareButton(_ sender: Any) {
         
-        //タイマーが停止していれば
-        if timer == nil {
+        //タイマーが停止しているかつtimeの値が60以上である場合
+        if timer == nil && time >= 60 {
             
             //Twitter投稿画面を開く
             if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
@@ -73,16 +75,17 @@ class ViewController: UIViewController,backgroundTimerDelegate {
                 if UIApplication.shared.canOpenURL(url! as URL) {
                     UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
                 }
-            }
-        } else if time <= 60 {
-            let dialog1 = UIAlertController(title: "1分以上積み上げてからツイートしましょう！", message: nil, preferredStyle: .alert)
-            dialog1.addAction(UIAlertAction(title: "確認", style: .default, handler: nil))
-            self.present(dialog1, animated: true, completion: nil)
-            } else {
-                let dialog2 = UIAlertController(title: "タイマーを停止してからツイートしてください。", message: nil, preferredStyle: .alert)
-                dialog2.addAction(UIAlertAction(title: "確認", style: .default, handler: nil))
-                self.present(dialog2, animated: true, completion: nil)
-            }
+              }
+                } else if time <= 60 {
+                    let dialog1 = UIAlertController(title: "1分以上積み上げてからツイートしましょう！", message: nil, preferredStyle: .alert)
+                    dialog1.addAction(UIAlertAction(title: "確認", style: .default, handler: nil))
+                    self.present(dialog1, animated: true, completion: nil)
+            
+                } else {
+                    let dialog2 = UIAlertController(title: "タイマーを停止してからツイートしてください。", message: nil, preferredStyle: .alert)
+                    dialog2.addAction(UIAlertAction(title: "確認", style: .default, handler: nil))
+                    self.present(dialog2, animated: true, completion: nil)
+                }
     }
     
     func setCurrentTimer(_ elapsedTime: Int) {

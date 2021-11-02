@@ -38,6 +38,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TanukiMagic</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array/>
 </dict>

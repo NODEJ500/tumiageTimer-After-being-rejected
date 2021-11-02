@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		76BF443DB8E6358703C7D9F6 /* Pods_originalAppTest1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CBD27A91E689E6BDAF6F72 /* Pods_originalAppTest1.framework */; };
 		BF214D47271207B300C2CFBD /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = BF214D46271207B300C2CFBD /* Animation.json */; };
+		BF40755F272ECD00008D04A1 /* TanukiMagic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF40755E272ECD00008D04A1 /* TanukiMagic.ttf */; };
 		BF6455432711D1D30029C61E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6455422711D1D30029C61E /* AppDelegate.swift */; };
 		BF6455452711D1D30029C61E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6455442711D1D30029C61E /* SceneDelegate.swift */; };
 		BF6455472711D1D30029C61E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6455462711D1D30029C61E /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		B3CBD27A91E689E6BDAF6F72 /* Pods_originalAppTest1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_originalAppTest1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF214D46271207B300C2CFBD /* Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
+		BF40755E272ECD00008D04A1 /* TanukiMagic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TanukiMagic.ttf; sourceTree = "<group>"; };
 		BF64553F2711D1D30029C61E /* originalAppTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalAppTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6455422711D1D30029C61E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6455442711D1D30029C61E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF40755D272ECCCD008D04A1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BF40755E272ECD00008D04A1 /* TanukiMagic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		BF6455362711D1D30029C61E = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		BF6455412711D1D30029C61E /* originalAppTest1 */ = {
 			isa = PBXGroup;
 			children = (
+				BF40755D272ECCCD008D04A1 /* fonts */,
 				BF6455422711D1D30029C61E /* AppDelegate.swift */,
 				BF6455442711D1D30029C61E /* SceneDelegate.swift */,
 				BF6455462711D1D30029C61E /* ViewController.swift */,
@@ -166,6 +177,7 @@
 			files = (
 				BF64554F2711D1D40029C61E /* LaunchScreen.storyboard in Resources */,
 				BF64554C2711D1D40029C61E /* Assets.xcassets in Resources */,
+				BF40755F272ECD00008D04A1 /* TanukiMagic.ttf in Resources */,
 				BF214D47271207B300C2CFBD /* Animation.json in Resources */,
 				BF64554A2711D1D30029C61E /* Main.storyboard in Resources */,
 			);
