@@ -10,15 +10,31 @@ class ViewController: UIViewController,backgroundTimerDelegate {
     var timerIsBackground = false
     var timer:Timer!
     var time:Int = 0
-    let font = UIFont(name: "TanukiMagic", size: 30.0)
     
     
     @IBOutlet weak var startButtonLabel: UIButton!
+    @IBOutlet weak var resetButtonLabel: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         
         super.viewDidLoad()
-    
+        
+        //スタートボタンのデザイン設定
+        startButtonLabel.layer.cornerRadius = 10
+        startButtonLabel.layer.shadowOpacity = 0.7
+        startButtonLabel.layer.shadowRadius = 3
+        startButtonLabel.layer.shadowColor = UIColor.black.cgColor
+        startButtonLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
+        //リセットボタンのデザイン設定
+        resetButtonLabel.layer.cornerRadius = 10
+        resetButtonLabel.layer.shadowOpacity = 0.7
+        resetButtonLabel.layer.shadowRadius = 3
+        resetButtonLabel.layer.shadowColor = UIColor.black.cgColor
+        resetButtonLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
+        //タイマーラベルのデザイン設定
+        timerLabel.layer.cornerRadius = 10
+        timerLabel.clipsToBounds = true
+        
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                    let sceneDelegate = windowScene.delegate as? SceneDelegate else {
                    return
@@ -26,10 +42,11 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         sceneDelegate.delegate = self
     }
     @IBAction func startButtonAction(_ sender: UIButton!) {
-        //タイマーボタンが押された時、ボタンタイトルをストップにする
+        //スタートボタンが押された時、タイマーが起動していなければタイマーを起動して、ボタンタイトルをストップにする
         if  timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-            sender.setTitle("ストップ", for: .normal)
+            startButtonLabel.setTitle("ストップ", for: .normal)
+        //ストップボタンが押された時、タイマーを破棄し、ボタンタイトルをスタートに戻す
         } else {
             timer.invalidate()
             timer = nil
@@ -51,7 +68,6 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         }
         self.timerLabel.text = "00:00:00"
         startButtonLabel.setTitle("スタート", for: .normal)
-        startButtonLabel.font = font!
         time = 0
    }
     @IBAction func twitterShareButton(_ sender: Any) {
