@@ -15,10 +15,14 @@ class ViewController: UIViewController,backgroundTimerDelegate {
     @IBOutlet weak var startButtonLabel: UIButton!
     @IBOutlet weak var resetButtonLabel: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var twitterButtun: UIButton!
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        twitterButtun.imageView?.contentMode = .scaleAspectFit
+        twitterButtun.contentHorizontalAlignment = .fill
+        twitterButtun.contentVerticalAlignment = .fill
         //スタートボタンのデザイン設定
         startButtonLabel.layer.cornerRadius = 10
         startButtonLabel.layer.shadowOpacity = 0.7

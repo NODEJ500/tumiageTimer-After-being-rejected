@@ -38,7 +38,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Twitterで共有する！">
+                                <buttonConfiguration key="configuration" style="plain" image="Twittericons" title="Twitterで共有する！">
                                     <fontDescription key="titleFontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="15"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -100,6 +100,7 @@
                         <outlet property="resetButtonLabel" destination="PCJ-I5-bja" id="roH-y1-zvm"/>
                         <outlet property="startButtonLabel" destination="IwQ-Gf-9DI" id="MOD-nS-CMe"/>
                         <outlet property="timerLabel" destination="46C-8B-ok3" id="nNz-Xq-Mab"/>
+                        <outlet property="twitterButtun" destination="YKa-tx-uSp" id="gfY-fc-rw8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,6 +109,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Twittericons" width="400" height="400"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
