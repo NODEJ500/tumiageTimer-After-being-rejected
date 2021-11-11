@@ -4,14 +4,8 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="TanukiMagic.ttf">
-            <string>Tanuki-Permanent-Marker</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -22,44 +16,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46C-8B-ok3">
-                                <rect key="frame" x="16" y="350" width="358" height="97"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="97" id="vwj-5h-F0S"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="70"/>
+                                <rect key="frame" x="58.666666666666657" y="383" width="272.66666666666674" height="78.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKa-tx-uSp">
-                                <rect key="frame" x="167" y="52" width="207" height="31"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Ttp-Ub-Mk7"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Twittericons" title="Twitterで共有する！">
-                                    <fontDescription key="titleFontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="15"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="twitterShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FW9-Dq-Jd9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-Gf-9DI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-Gf-9DI">
                                 <rect key="frame" x="43" y="613" width="130" height="45"/>
-                                <color key="backgroundColor" red="0.63137254901960782" green="0.83921568627450982" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="1Vf-rg-siZ"/>
-                                    <constraint firstAttribute="height" constant="45" id="qqq-OG-IWx"/>
+                                    <constraint firstAttribute="height" constant="45" id="eLH-zI-E2t"/>
+                                    <constraint firstAttribute="width" constant="130" id="peB-lK-q1b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="スタート">
+                                <state key="normal" title="START">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -67,40 +38,49 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCJ-I5-bja">
-                                <rect key="frame" x="222" y="613" width="130" height="45"/>
-                                <color key="backgroundColor" red="0.63137254901960782" green="0.83921568627450982" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Tanuki-Permanent-Marker" family="Tanuki Permanent Marker" pointSize="30"/>
+                                <rect key="frame" x="222" y="614" width="125" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="リセット">
+                                <state key="normal" title="RESET">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="resetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="icD-yI-RMp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9y-Sc-cyD">
+                                <rect key="frame" x="268" y="44" width="79" height="74"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Twitter social icons - circle - blue"/>
+                                <connections>
+                                    <action selector="twitterShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHo-U1-QEU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.96470588235294119" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.0" green="0.96470588235294119" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="YKa-tx-uSp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1Mk-p7-kba"/>
-                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="top" secondItem="PCJ-I5-bja" secondAttribute="top" id="3Kc-IS-Mar"/>
-                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="74M-My-gqd"/>
-                            <constraint firstItem="YKa-tx-uSp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Dwy-yR-rUR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IwQ-Gf-9DI" secondAttribute="bottom" constant="152" id="RI9-5T-EI0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCJ-I5-bja" secondAttribute="trailing" constant="38" id="X0Y-xb-KxB"/>
-                            <constraint firstItem="YKa-tx-uSp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="167" id="X2c-aF-Pdz"/>
-                            <constraint firstItem="YKa-tx-uSp" firstAttribute="trailing" secondItem="46C-8B-ok3" secondAttribute="trailing" id="h1m-wa-vkX"/>
-                            <constraint firstItem="46C-8B-ok3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="350" id="hOu-DU-PUw"/>
-                            <constraint firstItem="46C-8B-ok3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kzc-Dg-nwY"/>
-                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="baseline" secondItem="PCJ-I5-bja" secondAttribute="firstBaseline" id="ldd-zf-5LF"/>
-                            <constraint firstItem="PCJ-I5-bja" firstAttribute="leading" secondItem="IwQ-Gf-9DI" secondAttribute="trailing" constant="49" id="yE0-U0-d4C"/>
+                            <constraint firstItem="46C-8B-ok3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Cv-pu-WrQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PCJ-I5-bja" secondAttribute="bottom" constant="151" id="F6w-fg-uL5"/>
+                            <constraint firstItem="PCJ-I5-bja" firstAttribute="leading" secondItem="IwQ-Gf-9DI" secondAttribute="trailing" constant="49" id="HFt-Vv-qfA"/>
+                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="top" secondItem="PCJ-I5-bja" secondAttribute="top" id="Two-Fn-bgc"/>
+                            <constraint firstItem="o9y-Sc-cyD" firstAttribute="trailing" secondItem="PCJ-I5-bja" secondAttribute="trailing" id="bKh-3L-EIL"/>
+                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="centerY" secondItem="PCJ-I5-bja" secondAttribute="centerY" id="cPI-J2-lDr"/>
+                            <constraint firstItem="46C-8B-ok3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFV-Wz-H8G"/>
+                            <constraint firstItem="o9y-Sc-cyD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hTD-O9-2Yh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCJ-I5-bja" secondAttribute="trailing" constant="43" id="nm7-nR-Ah2"/>
+                            <constraint firstItem="o9y-Sc-cyD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="268" id="q5i-48-0HD"/>
+                            <constraint firstItem="IwQ-Gf-9DI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="rHl-1G-fWs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resetButtonLabel" destination="PCJ-I5-bja" id="roH-y1-zvm"/>
                         <outlet property="startButtonLabel" destination="IwQ-Gf-9DI" id="MOD-nS-CMe"/>
                         <outlet property="timerLabel" destination="46C-8B-ok3" id="nNz-Xq-Mab"/>
-                        <outlet property="twitterButtun" destination="YKa-tx-uSp" id="gfY-fc-rw8"/>
+                        <outlet property="twitterButtun" destination="o9y-Sc-cyD" id="0rp-vQ-10v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,9 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Twittericons" width="400" height="400"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="Twitter social icons - circle - blue" width="60" height="60"/>
     </resources>
 </document>

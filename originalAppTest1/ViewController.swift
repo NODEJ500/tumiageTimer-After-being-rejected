@@ -3,8 +3,9 @@
 
 
 import UIKit
+import EAIntroView
 
-class ViewController: UIViewController,backgroundTimerDelegate {
+class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
    
     
     var timerIsBackground = false
@@ -16,9 +17,20 @@ class ViewController: UIViewController,backgroundTimerDelegate {
     @IBOutlet weak var resetButtonLabel: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var twitterButtun: UIButton!
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        setup()
         
         twitterButtun.imageView?.contentMode = .scaleAspectFit
         twitterButtun.contentHorizontalAlignment = .fill
@@ -49,12 +61,12 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         //スタートボタンが押された時、タイマーが起動していなければタイマーを起動して、ボタンタイトルをストップにする
         if  timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-            startButtonLabel.setTitle("ストップ", for: .normal)
+            startButtonLabel.setTitle("STOP", for: .normal)
         //ストップボタンが押された時、タイマーを破棄し、ボタンタイトルをスタートに戻す
         } else {
             timer.invalidate()
             timer = nil
-            sender.setTitle("スタート", for: .normal)
+            sender.setTitle("START", for: .normal)
         }
     }
     @objc func timerCounter() {
@@ -71,7 +83,7 @@ class ViewController: UIViewController,backgroundTimerDelegate {
             timer = nil
         }
         self.timerLabel.text = "00:00:00"
-        startButtonLabel.setTitle("スタート", for: .normal)
+        startButtonLabel.setTitle("START", for: .normal)
         time = 0
    }
     @IBAction func twitterShareButton(_ sender: Any) {
@@ -128,5 +140,49 @@ class ViewController: UIViewController,backgroundTimerDelegate {
         if let _ = timer {
            timer.invalidate()
        }
+    }
+    func setup() {
+       
+        let visit = UserDefaults.standard.bool(forKey: "visit")
+        
+        if visit {
+            //二回目以降
+            print("二回目以降")
+        } else {
+            //初回アクセス
+            print("初回起動")
+            UserDefaults.standard.set(true, forKey: "visit")
+            
+            let page1 = EAIntroPage()
+            //背景色変更
+            page1.bgColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.9824101329, blue: 0.8031120896, alpha: 1)}
+            //タイトルのテキスト
+            page1.title = "ダウンロードありがとうございます！"
+            //タイトルの色変更
+            page1.titleColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.5058823529, blue: 0.8117647059, alpha: 1)}
+            //タイトルのフォントの設定
+            page1.titleFont = UIFont(name: "Arial", size: 32)
+             
+            //テキストの位置を変更
+            page1.titlePositionY = self.view.bounds.size.height/2
+            
+            let page2 = EAIntroPage()
+            //画像の設定
+            page2.bgImage = UIImage(named: "SC2")
+            
+            let page3 = EAIntroPage()
+            //画像の設定
+            page3.bgImage = UIImage(named: "SC3")
+            //ここでページを追加
+            let introView = EAIntroView(frame: self.view.bounds, andPages: [page1, page2, page3])
+            //スキップボタンのテキスト
+            introView?.skipButton.setTitle("SKIP", for: UIControl.State.normal)
+            //スキップボタンの色変更
+            introView?.skipButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+             
+            introView?.delegate = self
+            //アニメーション設定
+            introView?.show(in: self.view, animateDuration: 0.5)
+        }
     }
 }

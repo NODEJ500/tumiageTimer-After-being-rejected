@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol backgroundTimerDelegate: AnyObject {
     
     //バックグラウンドの経過時間を渡す
