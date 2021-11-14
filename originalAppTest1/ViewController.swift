@@ -7,11 +7,9 @@ import EAIntroView
 
 class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
    
-    
     var timerIsBackground = false
     var timer:Timer!
     var time:Int = 0
-    
     
     @IBOutlet weak var startButtonLabel: UIButton!
     @IBOutlet weak var resetButtonLabel: UIButton!
@@ -145,44 +143,43 @@ class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
        
         let visit = UserDefaults.standard.bool(forKey: "visit")
         
-        if visit {
-            //二回目以降
-            print("二回目以降")
-        } else {
-            //初回アクセス
-            print("初回起動")
-            UserDefaults.standard.set(true, forKey: "visit")
-            
-            let page1 = EAIntroPage()
-            //背景色変更
-            page1.bgColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.9824101329, blue: 0.8031120896, alpha: 1)}
-            //タイトルのテキスト
-            page1.title = "ダウンロードありがとうございます！"
-            //タイトルの色変更
-            page1.titleColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.5058823529, blue: 0.8117647059, alpha: 1)}
-            //タイトルのフォントの設定
-            page1.titleFont = UIFont(name: "Arial", size: 32)
-             
-            //テキストの位置を変更
-            page1.titlePositionY = self.view.bounds.size.height/2
-            
-            let page2 = EAIntroPage()
-            //画像の設定
-            page2.bgImage = UIImage(named: "SC2")
-            
-            let page3 = EAIntroPage()
-            //画像の設定
-            page3.bgImage = UIImage(named: "SC3")
-            //ここでページを追加
-            let introView = EAIntroView(frame: self.view.bounds, andPages: [page1, page2, page3])
-            //スキップボタンのテキスト
-            introView?.skipButton.setTitle("SKIP", for: UIControl.State.normal)
-            //スキップボタンの色変更
-            introView?.skipButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-             
-            introView?.delegate = self
-            //アニメーション設定
-            introView?.show(in: self.view, animateDuration: 0.5)
-        }
-    }
+            if visit {
+                //二回目以降
+                print("二回目以降")
+                } else {
+                    //初回アクセス
+                    print("初回起動")
+                    UserDefaults.standard.set(true, forKey: "visit")
+                    
+                    let page1 = EAIntroPage()
+                    //背景色変更
+                    page1.bgColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.9824101329, blue: 0.8031120896, alpha: 1)}
+                    //タイトルのテキスト
+                    page1.title = "ダウンロードありがとうございます！"
+                    //タイトルの色変更
+                    page1.titleColor = UIColor {_ in return #colorLiteral(red: 0, green: 0.5058823529, blue: 0.8117647059, alpha: 1)}
+                    //タイトルのフォントの設定
+                    page1.titleFont = UIFont(name: "Arial", size: 32)
+                     
+                    //テキストの位置を変更
+                    page1.titlePositionY = self.view.bounds.size.height/2
+                    
+                    let page2 = EAIntroPage()
+                    //画像の設定
+                    page2.bgImage = UIImage(named: "SC1")
+                    
+                    let page3 = EAIntroPage()
+                    //画像の設定
+                    page3.bgImage = UIImage(named: "SC2")
+                    //ここでページを追加
+                    let introView = EAIntroView(frame: self.view.bounds, andPages: [page1, page2, page3])
+                    //スキップボタンのテキスト
+                    introView?.skipButton.setTitle("SKIP", for: UIControl.State.normal)
+                    //スキップボタンの色変更
+                    introView?.skipButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+                    introView?.delegate = self
+                    //アニメーション設定
+                    introView?.show(in: self.view, animateDuration: 0.5)
+                }
+            }
 }
