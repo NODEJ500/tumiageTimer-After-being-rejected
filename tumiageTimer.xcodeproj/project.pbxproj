@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		B3CBD27A91E689E6BDAF6F72 /* Pods_originalAppTest1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_originalAppTest1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF64553F2711D1D30029C61E /* originalAppTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalAppTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF64553F2711D1D30029C61E /* tumiageTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tumiageTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6455422711D1D30029C61E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6455442711D1D30029C61E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BF6455462711D1D30029C61E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				BF7BAA5627130A3A00AA08EA /* Document */,
-				BF6455412711D1D30029C61E /* originalAppTest1 */,
+				BF6455412711D1D30029C61E /* tumiageTimer */,
 				BF6455402711D1D30029C61E /* Products */,
 				44FA1C68794C7B86CEB7F4F5 /* Pods */,
 				C9BE6F6C61C82846148255F3 /* Frameworks */,
@@ -66,12 +66,12 @@
 		BF6455402711D1D30029C61E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF64553F2711D1D30029C61E /* originalAppTest1.app */,
+				BF64553F2711D1D30029C61E /* tumiageTimer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF6455412711D1D30029C61E /* originalAppTest1 */ = {
+		BF6455412711D1D30029C61E /* tumiageTimer */ = {
 			isa = PBXGroup;
 			children = (
 				BF6455422711D1D30029C61E /* AppDelegate.swift */,
@@ -82,7 +82,7 @@
 				BF64554B2711D1D40029C61E /* Assets.xcassets */,
 				BF6455502711D1D40029C61E /* Info.plist */,
 			);
-			path = originalAppTest1;
+			path = tumiageTimer;
 			sourceTree = "<group>";
 		};
 		BF7BAA5627130A3A00AA08EA /* Document */ = {
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF64553E2711D1D30029C61E /* originalAppTest1 */ = {
+		BF64553E2711D1D30029C61E /* tumiageTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF6455532711D1D40029C61E /* Build configuration list for PBXNativeTarget "originalAppTest1" */;
+			buildConfigurationList = BF6455532711D1D40029C61E /* Build configuration list for PBXNativeTarget "tumiageTimer" */;
 			buildPhases = (
 				75F5FED77DA397B7CFE1CAD2 /* [CP] Check Pods Manifest.lock */,
 				BF64553B2711D1D30029C61E /* Sources */,
@@ -118,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = originalAppTest1;
+			name = tumiageTimer;
 			productName = originalAppTest1;
-			productReference = BF64553F2711D1D30029C61E /* originalAppTest1.app */;
+			productReference = BF64553F2711D1D30029C61E /* tumiageTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BF64553A2711D1D30029C61E /* Build configuration list for PBXProject "originalAppTest1" */;
+			buildConfigurationList = BF64553A2711D1D30029C61E /* Build configuration list for PBXProject "tumiageTimer" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF64553E2711D1D30029C61E /* originalAppTest1 */,
+				BF64553E2711D1D30029C61E /* tumiageTimer */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +363,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY5GZF65MN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = originalAppTest1/Info.plist;
+				INFOPLIST_FILE = tumiageTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -395,7 +395,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY5GZF65MN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = originalAppTest1/Info.plist;
+				INFOPLIST_FILE = tumiageTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -419,7 +419,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF64553A2711D1D30029C61E /* Build configuration list for PBXProject "originalAppTest1" */ = {
+		BF64553A2711D1D30029C61E /* Build configuration list for PBXProject "tumiageTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF6455512711D1D40029C61E /* Debug */,
@@ -428,7 +428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF6455532711D1D40029C61E /* Build configuration list for PBXNativeTarget "originalAppTest1" */ = {
+		BF6455532711D1D40029C61E /* Build configuration list for PBXNativeTarget "tumiageTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF6455542711D1D40029C61E /* Debug */,
