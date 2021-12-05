@@ -15,7 +15,7 @@ class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
     @IBOutlet weak var resetButtonLabel: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var twitterButtun: UIButton!
-    
+    @IBOutlet weak var recordButton: UIButton!
     override var shouldAutorotate: Bool {
         return false
     }
@@ -48,6 +48,13 @@ class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
         //タイマーラベルのデザイン設定
         timerLabel.layer.cornerRadius = 10
         timerLabel.clipsToBounds = true
+        
+        //レコードボタンのデザイン設定
+        resetButtonLabel.layer.cornerRadius = 10
+        resetButtonLabel.layer.shadowOpacity = 0.7
+        resetButtonLabel.layer.shadowRadius = 3
+        resetButtonLabel.layer.shadowColor = UIColor.black.cgColor
+        resetButtonLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                    let sceneDelegate = windowScene.delegate as? SceneDelegate else {
