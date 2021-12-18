@@ -12,11 +12,11 @@ import RealmSwift
 
 class RecordModel:Object {
     
-     
-     dynamic var memo:String?
-     dynamic var data:Date?
+    
+    dynamic var memo:String?
+    dynamic var data:String?
     // id をプライマリーキーとして設定
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+    //override static func primaryKey() -> String? {
+    //return "id"
 }
+
