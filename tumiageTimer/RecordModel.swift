@@ -12,11 +12,15 @@ import RealmSwift
 
 class RecordModel:Object {
     
+    //dynamic var id:Int?
+    //時間保存用
+    dynamic var time:String?
+    //チャートで使う時間保存用
+    dynamic var charttime:Int?
+    //日付保存用
+    dynamic var date:String?
     
-    dynamic var memo:String?
-    dynamic var data:String?
-    // id をプライマリーキーとして設定
     //override static func primaryKey() -> String? {
     //return "id"
+    //}
 }
-

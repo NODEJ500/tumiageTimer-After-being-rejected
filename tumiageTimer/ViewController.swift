@@ -30,7 +30,7 @@ class ViewController: UIViewController,backgroundTimerDelegate,EAIntroDelegate {
         
         super.viewDidLoad()
         
-        tabBarItem.title = "タイマー"
+        UITabBarItem.appearance().setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 20)], for: .normal)
         
         setup()
         

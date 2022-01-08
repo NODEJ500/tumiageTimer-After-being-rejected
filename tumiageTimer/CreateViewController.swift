@@ -67,17 +67,24 @@ class CreateViewController: UIViewController,UITextFieldDelegate {
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(dialog, animated: true, completion: nil)
         } else {
+            
             //RecordModelをインスタンス化
             let recordModel:RecordModel = RecordModel()
             
-            recordModel.data = self.dateTextField.text
-            recordModel.memo = self.minutesTextField.text! + "分"
+            recordModel.date = self.dateTextField.text!
+            recordModel.time = self.minutesTextField.text! + "分"
+            
+            //チャートで使う為の値の保存
+            recordModel.charttime = Int(self.minutesTextField.text!)
             
             //Realmデータベースを取得
             let realm = try! Realm()
             try! realm.write {
                 realm.add(recordModel)
                 self.dismiss(animated: true, completion: nil)
+                
+                //Realm確認用
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
             }
         }
     }

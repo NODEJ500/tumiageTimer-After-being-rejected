@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9AB7334BA228E5CB584F31A5 /* Pods_tumiageTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD9F7A726A22E3E59CEEBD /* Pods_tumiageTimer.framework */; };
+		BF0330D227771BB6000815EB /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0330D127771BB6000815EB /* ChartsViewController.swift */; };
 		BF345B25275B01E000CAE57B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF345B24275B01E000CAE57B /* RecordViewController.swift */; };
 		BF345B27275B080800CAE57B /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF345B26275B080800CAE57B /* RecordModel.swift */; };
 		BF345B29275B0A9300CAE57B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF345B28275B0A9300CAE57B /* CreateViewController.swift */; };
@@ -23,6 +24,7 @@
 		4190251EA0003463BB7C5D36 /* Pods-tumiageTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tumiageTimer.debug.xcconfig"; path = "Target Support Files/Pods-tumiageTimer/Pods-tumiageTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		89AD9F7A726A22E3E59CEEBD /* Pods_tumiageTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tumiageTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6F8D5ED858A1ED9ECB9979 /* Pods-tumiageTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tumiageTimer.release.xcconfig"; path = "Target Support Files/Pods-tumiageTimer/Pods-tumiageTimer.release.xcconfig"; sourceTree = "<group>"; };
+		BF0330D127771BB6000815EB /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		BF345B24275B01E000CAE57B /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		BF345B26275B080800CAE57B /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		BF345B28275B0A9300CAE57B /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				BF345B24275B01E000CAE57B /* RecordViewController.swift */,
 				BF345B26275B080800CAE57B /* RecordModel.swift */,
 				BF345B28275B0A9300CAE57B /* CreateViewController.swift */,
+				BF0330D127771BB6000815EB /* ChartsViewController.swift */,
 				BF6455482711D1D30029C61E /* Main.storyboard */,
 				BFAF5C742737EED900DC2D7C /* Launch Screen.storyboard */,
 				BF64554B2711D1D40029C61E /* Assets.xcassets */,
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6455472711D1D30029C61E /* ViewController.swift in Sources */,
+				BF0330D227771BB6000815EB /* ChartsViewController.swift in Sources */,
 				BF6455432711D1D30029C61E /* AppDelegate.swift in Sources */,
 				BF345B29275B0A9300CAE57B /* CreateViewController.swift in Sources */,
 				BF6455452711D1D30029C61E /* SceneDelegate.swift in Sources */,

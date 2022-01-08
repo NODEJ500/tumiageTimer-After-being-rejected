@@ -18,14 +18,12 @@ class RecordViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabBarItem.title = "記録"
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         //Realmをインスタンス化
         let realm = try! Realm()
-        
+        //Realmデータベースに登録されているデータを全て取得
         self.recordList = realm.objects(RecordModel.self)
     }
     
@@ -42,8 +40,8 @@ class RecordViewController: UIViewController,UITableViewDelegate,UITableViewData
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             let record:RecordModel = self.recordList[(indexPath as NSIndexPath).row]
-            cell.textLabel?.text = record.memo
-            cell.detailTextLabel?.text = record.data
+            cell.textLabel?.text = record.time
+            cell.detailTextLabel?.text = record.date
             return cell
             
         }

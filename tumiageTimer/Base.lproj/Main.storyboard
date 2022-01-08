@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ALg-hV-7jP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ALg-hV-7jP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--タイマー-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tumiageTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,7 +76,7 @@
                             <constraint firstItem="o9y-Sc-cyD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="utE-3b-Zqg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="28Z-Ii-h5n"/>
+                    <tabBarItem key="tabBarItem" title="タイマー" id="28Z-Ii-h5n"/>
                     <navigationItem key="navigationItem" id="e5w-PF-BiT"/>
                     <connections>
                         <outlet property="resetButtonLabel" destination="PCJ-I5-bja" id="roH-y1-zvm"/>
@@ -89,7 +89,33 @@
             </objects>
             <point key="canvasLocation" x="2222" y="-108"/>
         </scene>
-        <!--Item-->
+        <!--グラフ-->
+        <scene sceneID="hZl-7d-ahG">
+            <objects>
+                <viewController id="LNw-YF-gjb" customClass="ChartsViewController" customModule="tumiageTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a96-J4-mUm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QCs-w8-HFu" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="199" width="374" height="499"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kAS-5d-HH1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="グラフ" id="d4U-M5-XbO"/>
+                    <connections>
+                        <outlet property="barChartView" destination="QCs-w8-HFu" id="EV1-jp-vVg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyk-A7-pxv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1399" y="804"/>
+        </scene>
+        <!--記録-->
         <scene sceneID="2oU-Ag-gvA">
             <objects>
                 <viewController storyboardIdentifier="RecordVC" id="bvM-kj-lAK" customClass="RecordViewController" customModule="tumiageTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +125,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-xl-qoq">
                                 <rect key="frame" x="0.0" y="114" width="414" height="699"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.45098039220000002" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="8Th-7Y-p1o" detailTextLabel="QXl-bU-8in" style="IBUITableViewCellStyleSubtitle" id="bFl-ya-9HV">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -128,7 +154,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIW-3e-ahi">
-                                <rect key="frame" x="342.5" y="79" width="41.5" height="31"/>
+                                <rect key="frame" x="340.5" y="79" width="43.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                 <connections>
@@ -137,7 +163,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5mS-uT-hbV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5mS-uT-hbV" firstAttribute="trailing" secondItem="cIw-xl-qoq" secondAttribute="trailing" id="KlL-vq-FzY"/>
                             <constraint firstItem="cIw-xl-qoq" firstAttribute="leading" secondItem="5mS-uT-hbV" secondAttribute="leading" id="NfN-8r-PTr"/>
@@ -147,7 +173,7 @@
                             <constraint firstItem="5mS-uT-hbV" firstAttribute="trailing" secondItem="mIW-3e-ahi" secondAttribute="trailing" constant="30" id="qaG-fr-Zip"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Unk-d0-yFD"/>
+                    <tabBarItem key="tabBarItem" title="記録" id="Unk-d0-yFD"/>
                     <navigationItem key="navigationItem" id="JvO-Fw-NZT">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="agW-fm-arf">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MBi-6c-eIK">
@@ -254,12 +280,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8KZ-9v-Bv4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cAf-rU-qHA"/>
                         <segue destination="bvM-kj-lAK" kind="relationship" relationship="viewControllers" id="wrL-h3-hML"/>
+                        <segue destination="LNw-YF-gjb" kind="relationship" relationship="viewControllers" id="J2X-0G-GXk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wj-Rb-354" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
