@@ -16,7 +16,7 @@ class RecordModel:Object {
     //時間保存用
     dynamic var time:String?
     //チャートで使う時間保存用
-    dynamic var charttime:Int?
+    dynamic var charttime:Double = 0
     //日付保存用
     dynamic var date:String?
     

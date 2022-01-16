@@ -16,7 +16,8 @@ class ChartsViewController: UIViewController {
     
     var realmdata: Results<RecordModel>!
     //グラフで使う配列
-    var timearray: [Int] = []
+    var timearray: [Double] = []
+    var datearray: [String] = []
     
     
     override func viewDidLoad() {
@@ -25,19 +26,26 @@ class ChartsViewController: UIViewController {
        
         let realm = try! Realm()
         
-        //（Realmからデータを引っ張ってきてグラフに表示）
+        //（Realmからデータを取得してグラフに表示）
         realmdata = realm.objects(RecordModel.self)
         
-        if let unwrappedcharttime = charttime {
-        
-            for i in realmdata{
-                timearray.append(i.charttime!)
-            }
+        for i in realmdata {
+            timearray.append(i.charttime)
         }
-       
         
+        for i in realmdata {
+            datearray.append(i.date!)
+        }
         
-        let entries = timearray.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
+        var entries = [BarChartDataEntry]()
+        
+        for i in 0..<realmdata.count {
+            entries.append(BarChartDataEntry(x: Double(timearray[i]), y: Double(timearray[i])))
+        }
+        print(entries)
+
+        
+        //let entries = timearray.enumerated().map { BarChartDataEntry(x: Double($0.element), y: Double($0.element)) }
         
         let dataSet = BarChartDataSet(entries: entries)
         
@@ -67,6 +75,15 @@ class ChartsViewController: UIViewController {
         barChartView.leftAxis.gridColor = .systemGray
         // 軸線は非表示にする
         barChartView.leftAxis.drawAxisLineEnabled = false
+        //データの値を非表示
+        dataSet.drawValuesEnabled = false
+        //グラフの色を変更
+        dataSet.colors = [.blue]
+        //判例を非表示
+        barChartView.legend.enabled = false
+        //グラフのアニメーション
+        //barChart.animate(xAxisDuration: 2.5, yAxisDuration: 2.5, easingOption: .linear)
+        
 
        
     }

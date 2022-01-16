@@ -61,7 +61,7 @@ class CreateViewController: UIViewController,UITextFieldDelegate {
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(dialog, animated: true, completion: nil)
             
-            //minutesTextFieldが空だった場合ダイアログを出す
+        //minutesTextFieldが空だった場合ダイアログを出す
         } else if minutesTextField.text == "" {
             let dialog = UIAlertController(title: "時間を入力してください", message: nil, preferredStyle: .alert)
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -75,7 +75,8 @@ class CreateViewController: UIViewController,UITextFieldDelegate {
             recordModel.time = self.minutesTextField.text! + "分"
             
             //チャートで使う為の値の保存
-            recordModel.charttime = Int(self.minutesTextField.text!)
+            recordModel.charttime = Double(self.minutesTextField.text!)!
+            print("charttime:\(recordModel.charttime)")
             
             //Realmデータベースを取得
             let realm = try! Realm()
