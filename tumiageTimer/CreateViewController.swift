@@ -49,7 +49,7 @@ class CreateViewController: UIViewController,UITextFieldDelegate {
         dateTextField.endEditing(true)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        dateTextField.text = "\(formatter.string(from: Date()))"
+        dateTextField.text = "\(formatter.string(from: (datePicker.date)))"
     }
     
     

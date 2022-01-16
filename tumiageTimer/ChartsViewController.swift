@@ -78,11 +78,11 @@ class ChartsViewController: UIViewController {
         //データの値を非表示
         dataSet.drawValuesEnabled = false
         //グラフの色を変更
-        dataSet.colors = [.blue]
-        //判例を非表示
+        dataSet.colors = [UIColor(red: 0, green: 0.96, blue: 0.81, alpha: 1.0)]
+        //凡例を非表示
         barChartView.legend.enabled = false
         //グラフのアニメーション
-        //barChart.animate(xAxisDuration: 2.5, yAxisDuration: 2.5, easingOption: .linear)
+        barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .linear)
         
 
        
