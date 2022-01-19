@@ -18,12 +18,16 @@ class ChartsViewController: UIViewController {
     //グラフで使う配列
     var timearray: [Double] = []
     var datearray: [String] = []
-    
+    var labels: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         let realm = try! Realm()
         
         //（Realmからデータを取得してグラフに表示）
@@ -37,21 +41,26 @@ class ChartsViewController: UIViewController {
             datearray.append(i.date!)
         }
         
-        var entries = [BarChartDataEntry]()
-        
-        for i in 0..<realmdata.count {
-            entries.append(BarChartDataEntry(x: Double(timearray[i]), y: Double(timearray[i])))
+        for i in realmdata {
+            labels.append(i.date!)
         }
-        print(entries)
-
         
-        //let entries = timearray.enumerated().map { BarChartDataEntry(x: Double($0.element), y: Double($0.element)) }
+        let entries = timearray.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
         
         let dataSet = BarChartDataSet(entries: entries)
         
         let data = BarChartData(dataSet: dataSet)
         
         barChartView.data = data
+        
+        //ラベルに表示するデータを指定　上で作成した「labels」を指定
+        print("labels: \(labels)")
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:labels)
+        
+        barChartView.xAxis.granularity = 1
+        
+        // ラベルの数を設定
+        barChartView.xAxis.labelCount = 7
         
         // X軸のラベルの位置を下に設定
         barChartView.xAxis.labelPosition = .bottom
@@ -83,9 +92,5 @@ class ChartsViewController: UIViewController {
         barChartView.legend.enabled = false
         //グラフのアニメーション
         barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .linear)
-        
-
-       
     }
-
 }
