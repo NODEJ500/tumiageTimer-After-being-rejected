@@ -61,7 +61,7 @@ class CreateViewController: UIViewController,UITextFieldDelegate {
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(dialog, animated: true, completion: nil)
             
-        //minutesTextFieldが空だった場合ダイアログを出す
+            //minutesTextFieldが空だった場合ダイアログを出す
         } else if minutesTextField.text == "" {
             let dialog = UIAlertController(title: "時間を入力してください", message: nil, preferredStyle: .alert)
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

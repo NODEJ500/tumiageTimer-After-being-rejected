@@ -20,7 +20,4 @@ class RecordModel:Object {
     //日付保存用
     dynamic var date:String?
     
-    //override static func primaryKey() -> String? {
-    //return "id"
-    //}
 }

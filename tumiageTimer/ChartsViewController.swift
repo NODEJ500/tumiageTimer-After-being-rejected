@@ -10,7 +10,7 @@ import RealmSwift
 import Charts
 
 class ChartsViewController: UIViewController {
-
+    
     
     @IBOutlet weak var barChartView: BarChartView!
     
@@ -29,6 +29,11 @@ class ChartsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         let realm = try! Realm()
+        
+        // labels、timeArray、datearrayの中身を空にする。
+        labels.removeAll()
+        timearray.removeAll()
+        datearray.removeAll()
         
         //（Realmからデータを取得してグラフに表示）
         realmdata = realm.objects(RecordModel.self)
